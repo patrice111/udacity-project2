@@ -101,44 +101,24 @@ gsap.from(".hero-content a", {
 
 
 //Active State
-$(document).ready(function() {
-    $(document).on("scroll", onScroll);
+function onScroll(event){
+  var sections = document.querySelectorAll('.menu a');
+  var scrollLink = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  
+  for( var i = 0; i < sections.length; i++ ){
+    var currLink = sections[i]; 
+    var valLink = currLink.getAttribute('href');
+    var refElement = document.querySelector(valLink);
+      if( refElement.offsetTop <= scrollLink && ( refElement.offsetTop + refElement.offsetHeight > scrollLink)){
+        document.querySelector('.menu ul li a').classList.remove('active');
+        currLink.classList.add('active');
+      }else{
+         currLink.classList.remove('active');
+       }
+  }  
+};
 
-    //smoothscroll
-    $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault();
-        $(document).off("scroll");
-
-        $('a').each(function() {
-            $(this).removeClass('active');
-        })
-        $(this).addClass('active');
-
-        var scrollLink = this.hash,
-            menu = scrollLink;
-        $scrollLink = $(scrollLink);
-        $('html, body').stop().animate({
-            'scrollTop': $scrollLink.offset().top + 2
-        }, 500, 'swing', function() {
-            window.location.hash = scrollLink;
-            $(document).on("scroll", onScroll);
-        });
-    });
-});
-
-function onScroll(event) {
-    var scrollPosition = $(document).scrollTop();
-    $('.menu a').each(function() {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
-            $('.menu ul li a').removeClass("active");
-            currLink.addClass("active");
-        } else {
-            currLink.removeClass("active");
-        }
-    });
-}
+window.document.addEventListener('scroll', onScroll );
 
 
 
