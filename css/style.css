@@ -694,6 +694,12 @@ form span {
     margin-bottom: 1rem;
 }
 
+.copyright{
+display: block;
+padding: 1rem 0;
+text-align: center;
+}
+
 /* Back to top*/
 
 #myBtn {
