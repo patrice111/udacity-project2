@@ -101,25 +101,25 @@ gsap.from(".hero-content a", {
 
 
 //Active State
-function onScroll(event){
-  var sections = document.querySelectorAll('.menu a');
-  var scrollLink = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-  
-  for( var i = 0; i < sections.length; i++ ){
-    var currLink = sections[i]; 
-    var valLink = currLink.getAttribute('href');
-    var refElement = document.querySelector(valLink);
-      if( refElement.offsetTop <= scrollLink && ( refElement.offsetTop + refElement.offsetHeight > scrollLink)){
-        document.querySelector('.menu ul li a').classList.remove('active');
-        currLink.classList.add('active');
-      }else{
-         currLink.classList.remove('active');
-       }
-  }  
-};
+//Change navigation style on scroll
+let mainNavLinks = document.querySelectorAll(".nav-list a");
 
-window.document.addEventListener('scroll', onScroll );
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
 
+  mainNavLinks.forEach(link => {
+    let section = document.querySelector(link.hash);
+
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+});
 
 
 
