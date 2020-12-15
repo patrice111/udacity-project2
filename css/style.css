@@ -25,6 +25,10 @@ deep-purple: #331a38;
     box-sizing: inherit;
 }
 
+:root{
+  scroll-behavior: smooth;
+}
+
 html {
     box-sizing: border-box;
     font-size: 65%;
