@@ -59,22 +59,36 @@ links.map((link) => {
     });
 });
 
+
 //Change navigation style on scroll
-let mainNavLinks = document.querySelectorAll(".nav-list a");
 
-window.addEventListener("scroll", (event) => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link) => {
-        let section = document.querySelector(link.hash);
-
-        if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
-        }
+(function() {
+  const scrollspys = document.querySelectorAll(".scrollspy");
+  const links = document.querySelector(".nav-list");
+  const linksHeight = links.offsetHeight;
+  const allLinks = links.querySelectorAll("a");
+  function scrollspy() {
+    scrollspys.forEach(current => {
+      let _ = current;
+      let currentElementOffset = _.offsetTop;
+      let scrollPosition =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentElementOffset <= scrollPosition + linksHeight) {
+        allLinks.forEach(currentLink => {
+          currentLink.classList.remove("active");
+        });
+        const currentID = current.getAttribute("id");
+        document
+          .querySelector(`a[href="#${currentID}"]`)
+          .classList.add("active");
+      }
     });
-});
+  }
+  window.addEventListener("scroll", scrollspy);
+})();
+
+
+
 
 //Top Button
 const mybutton = document.getElementById("myBtn");
