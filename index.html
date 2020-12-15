@@ -25,7 +25,7 @@
 <body>
 
     <!-- Header Navigation -->
-    <header id="home" class="header">
+    <header id="home" class="header scrollspy">
         <nav class="nav">
             <div class="navigation container">
                 <div class="logo">
@@ -44,25 +44,12 @@
                     </div>
 
                     <ul class="nav-list">
-
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#products" class="nav-link">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#featured" class="nav-link">Featured</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#best-sellers" class="nav-link">Best Sellers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
+                        <li class="nav-item"><a href="#featured" class="nav-link">Featured</a></li>
+                        <li class="nav-item"><a href="#best-sellers" class="nav-link">Best Sellers</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a></li>
                     </ul>
                 </div>
 
@@ -93,10 +80,10 @@
 
     <!-- Main -->
     <main>
-        <section class="products section">
+        <section id="products" class="products section scrollspy" >
             <div class="title">
 
-                <h1 id="products">Products</h1>
+                <h1>Products</h1>
             </div>
 
             <div class="products-center container">
@@ -142,9 +129,9 @@
         </section>
 
         <!-- Featured -->
-        <section class="section featured">
+        <section id="featured" class="section featured scrollspy" >
             <div class="title">
-                <h1 id="featured">Featured</h1>
+                <h1>Featured</h1>
             </div>
 
             <div class="product-center container">
@@ -245,9 +232,9 @@
         </section>
 
         <!--Best Sellers -->
-        <section class="section featured">
+        <section id="best-sellers" class="section featured scrollspy" >
             <div class="title">
-                <h1 id="best-sellers">Best Sellers</h1>
+                <h1>Best Sellers</h1>
             </div>
 
             <div class="product-center container">
@@ -445,33 +432,12 @@
                 </div>
             </div>
         </section>
-         </main>
-
-        <!-- Product Banner 
-        <section class="section">
-            <div class="product-banner">
-                <div class="left">
-                    <img src="./img/bruno.png" alt="" />
-                </div>
-                <div class="right">
-                    <div class="content">
-                        <h2><span class="discount">50% </span> OFF</h2>
-                        <h1>
-                            <span>End of</span>
-                            <span>Year Sale</span>
-                        </h1>
-                        <a class="btn" href="#products">shop now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main> 
--->
+	</main>	
 
     <!-- Footer -->
-    <footer id="footer" class="section footer">
+    <footer id="contact" class="section footer scrollspy">
         <div class="footer-title">
-            <h1 id="contact">Contact</h1>
+            <h1>Contact</h1>
         </div>
         <div class="container">
             <div class="footer-container">
@@ -524,20 +490,17 @@
         </div>
         </div>
     </footer>
-    
-    <div class= copyright>
-        <h2>The Sunglass Shop &copy; 2020</h2>
-    </div>
+	
+	<div class= copyright>
+	<h2>The Sunglass Shop &copy; 2020</h2>
+	</div>
+	
     <!-- End Footer -->
+	
 
     <!-- Back to top button -->
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-
-
-    <!--GSAP-->
-    <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
 
     <!--JS-->
